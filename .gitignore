@@ -33,7 +33,10 @@ audit
 *snap
 init
 init.json
+.init.json
 init.txt
+.init.txt
+.init.out
 init.out
 *hclic
 license.txt
@@ -60,3 +63,4 @@ override.tf.json
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 
+/data
