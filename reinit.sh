@@ -14,6 +14,8 @@ vault server -config=vault.hcl >vault.log 2>vault.err &
 
 sleep 1
 
+export VAULT_ADDR=http://localhost:8200/
+
 vault operator init -format=json -t 1 -n 1 | tee .init.json
 
 vault operator unseal $(jq -r .unseal_keys_b64[0] < .init.json)
