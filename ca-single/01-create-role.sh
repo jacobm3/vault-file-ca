@@ -2,7 +2,7 @@
 
 set -e 
 
-PKIPATH=pki-ca-root
+. config.env
 
 vault write ${PKIPATH}/roles/wildcard-theneutral-zone \
      allowed_domains="theneutral.zone" \

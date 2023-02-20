@@ -2,7 +2,7 @@
 
 set -e 
 
-PKIPATH=pki-ca-root
+. config.env
 
 NAME=wildcard-theneutral-zone
 mkdir -p $NAME

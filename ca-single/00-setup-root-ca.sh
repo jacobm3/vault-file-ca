@@ -2,9 +2,10 @@
 
 set -e 
 
+. config.env
 
-PKIPATH=pki-ca-root
-ROOTNAME=acer5-demo-ca-root.2022.04
+# Danger
+# vault secrets disable $PKIPATH
 
 vault secrets enable -path=${PKIPATH} pki
 vault secrets tune -max-lease-ttl=87600h ${PKIPATH}
