@@ -1,5 +1,5 @@
 storage "file" {
-  path = "/home/ubuntu/j/file-ca/data"
+  path = "/home/ubuntu/tmp/vault-file-ca/data"
 }
 
 listener "tcp" {
@@ -10,4 +10,3 @@ listener "tcp" {
 license_path = "/home/ubuntu/.vault-license"
 disable_mlock = true
 log_level = "debug"
-

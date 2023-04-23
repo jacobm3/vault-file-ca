@@ -18,13 +18,17 @@ vault write ${PKIPATH}/config/urls \
      issuing_certificates="$VAULT_ADDR/v1/pki/ca" \
      crl_distribution_points="$VAULT_ADDR/v1/pki/crl"
 
-# works in ubuntu 20
+cat <<EOF
+
+# Import your new root CA in Ubuntu
 # sudo cp ${ROOTNAME}.crt /usr/local/share/ca-certificates
 # sudo update-ca-certificates
 
 # WSL2 -> Win10
-# cp ${ROOTNAME}.crt /mnt/c/Users/jacob/Downloads/
+# cp ${ROOTNAME}.crt /mnt/c/Users/USER/Downloads/
 #
 # in admin powershell
-# PS C:\Windows\system32> cd C:\users\jacob\Downloads\
-# PS C:\users\jacob\Downloads> Import-Certificate -FilePath .\hashi-demo-ca-root.2022.04.crt -CertStoreLocation Cert:\LocalMachine\Root
+# PS C:\Windows\system32> cd C:\users\USER\Downloads
+# PS C:\users\USER\Downloads> Import-Certificate -FilePath ${ROOTNAME}.crt -CertStoreLocation Cert:\LocalMachine\Root
+
+EOF
